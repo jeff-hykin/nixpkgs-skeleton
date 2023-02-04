@@ -795,7 +795,8 @@ rec {
     stage3
     stage4
     (prevStage: {
-      inherit config overlays;
+      config    = config;
+      overlays  = overlays;
       stdenv = stdenvDarwin prevStage;
     })
   ];

@@ -3,68 +3,53 @@
 { lib }:
 
 let
-  inherit (lib)
-    elem
-    flip
-    isAttrs
-    isBool
-    isDerivation
-    isFloat
-    isFunction
-    isInt
-    isList
-    isString
-    isStorePath
-    toDerivation
-    toList
-    ;
-  inherit (lib.lists)
-    all
-    concatLists
-    count
-    elemAt
-    filter
-    foldl'
-    head
-    imap1
-    last
-    length
-    tail
-    ;
-  inherit (lib.attrsets)
-    attrNames
-    filterAttrs
-    hasAttr
-    mapAttrs
-    optionalAttrs
-    zipAttrsWith
-    ;
-  inherit (lib.options)
-    getFiles
-    getValues
-    mergeDefaultOption
-    mergeEqualOption
-    mergeOneOption
-    mergeUniqueOption
-    showFiles
-    showOption
-    ;
-  inherit (lib.strings)
-    concatMapStringsSep
-    concatStringsSep
-    escapeNixString
-    hasInfix
-    isStringLike
-    ;
-  inherit (lib.trivial)
-    boolToString
-    ;
-
-  inherit (lib.modules)
-    mergeDefinitions
-    fixupOptionType
-    mergeOptionDecls
-    ;
+  elem                 = lib.elem;
+  flip                 = lib.flip;
+  isAttrs              = lib.isAttrs;
+  isBool               = lib.isBool;
+  isDerivation         = lib.isDerivation;
+  isFloat              = lib.isFloat;
+  isFunction           = lib.isFunction;
+  isInt                = lib.isInt;
+  isList               = lib.isList;
+  isString             = lib.isString;
+  isStorePath          = lib.isStorePath;
+  toDerivation         = lib.toDerivation;
+  toList               = lib.toList;
+  all                  = lib.lists.all;
+  concatLists          = lib.lists.concatLists;
+  count                = lib.lists.count;
+  elemAt               = lib.lists.elemAt;
+  filter               = lib.lists.filter;
+  foldl'               = lib.lists.foldl';
+  head                 = lib.lists.head;
+  imap1                = lib.lists.imap1;
+  last                 = lib.lists.last;
+  length               = lib.lists.length;
+  tail                 = lib.lists.tail;
+  attrNames            = lib.attrsets.attrNames;
+  filterAttrs          = lib.attrsets.filterAttrs;
+  hasAttr              = lib.attrsets.hasAttr;
+  mapAttrs             = lib.attrsets.mapAttrs;
+  optionalAttrs        = lib.attrsets.optionalAttrs;
+  zipAttrsWith         = lib.attrsets.zipAttrsWith;
+  getFiles             = lib.options.getFiles;
+  getValues            = lib.options.getValues;
+  mergeDefaultOption   = lib.options.mergeDefaultOption;
+  mergeEqualOption     = lib.options.mergeEqualOption;
+  mergeOneOption       = lib.options.mergeOneOption;
+  mergeUniqueOption    = lib.options.mergeUniqueOption;
+  showFiles            = lib.options.showFiles;
+  showOption           = lib.options.showOption;
+  concatMapStringsSep  = lib.strings.concatMapStringsSep;
+  concatStringsSep     = lib.strings.concatStringsSep;
+  escapeNixString      = lib.strings.escapeNixString;
+  hasInfix             = lib.strings.hasInfix;
+  isStringLike         = lib.strings.isStringLike;
+  boolToString         = lib.trivial.boolToString;
+  mergeDefinitions     = lib.modules.mergeDefinitions;
+  fixupOptionType      = lib.modules.fixupOptionType;
+  mergeOptionDecls     = lib.modules.mergeOptionDecls;
   outer_types =
 rec {
   isType = type: x: (x._type or "") == type;
